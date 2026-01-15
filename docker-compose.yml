@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   seq2seq:
     build: .
@@ -9,9 +7,34 @@ services:
       - ./models:/app/models
       - ./results:/app/results
       - ./notebooks:/app/notebooks
+      - ./scripts:/app/scripts
     environment:
       - PYTHONUNBUFFERED=1
     command: python scripts/evaluate.py
+    
+  evaluate:
+    build: .
+    container_name: seq2seq-evaluate
+    volumes:
+      - ./data:/app/data
+      - ./models:/app/models
+      - ./results:/app/results
+      - ./scripts:/app/scripts
+    environment:
+      - PYTHONUNBUFFERED=1
+    command: python scripts/evaluate.py
+  
+  generate:
+    build: .
+    container_name: seq2seq-generate
+    volumes:
+      - ./data:/app/data
+      - ./models:/app/models
+      - ./results:/app/results
+      - ./scripts:/app/scripts
+    environment:
+      - PYTHONUNBUFFERED=1
+    command: python scripts/generate_examples.py --num-examples 5
     
   jupyter:
     build: .
