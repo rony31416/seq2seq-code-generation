@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  seq2seq:
+    build: .
+    container_name: seq2seq-code-generation
+    volumes:
+      - ./data:/app/data
+      - ./models:/app/models
+      - ./results:/app/results
+      - ./notebooks:/app/notebooks
+    environment:
+      - PYTHONUNBUFFERED=1
+    command: python scripts/evaluate.py
+    
+  jupyter:
+    build: .
+    container_name: seq2seq-jupyter
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./:/app
+    command: jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser --allow-root
