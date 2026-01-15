@@ -312,5 +312,6 @@ Output (code tokens)
 - **[Setup Guide](SETUP.md)** - Detailed installation steps
 - **[Report](docs/REPORT.md)** - Full experimental analysis
 - **[Architecture](docs/ARCHITECTURE.md)** - Model details
+- **[ Instructions for model files](models/README.md)** - Model details
 
 ---
