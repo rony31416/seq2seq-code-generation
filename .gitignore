@@ -23,9 +23,7 @@ models/*.pth
 *.pt
 *.pth
 
-# Results
-results/
-results/metrics/*.pkl
+
 
 # IDE
 .vscode/
