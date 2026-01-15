@@ -24,7 +24,7 @@ models/*.pth
 *.pth
 
 # Results
-results/plots/*.png
+results/
 results/metrics/*.pkl
 
 # IDE
