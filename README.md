@@ -1,32 +1,3 @@
-<img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" style="height:64px;margin-right:32px"/>
-
-# Folder Structure
-
-```
-seq2seq-code-generation/
-├── README.md
-├── requirements.txt
-├── notebook.ipynb
-├── data/
-│   └── README.md
-├── checkpoints/
-│   └── .gitkeep
-├── plots/
-│   └── .gitkeep
-├── inference/
-│   ├── inference.py
-│   ├── example_inference.py
-│   └── README.md
-└── utils/
-    ├── __init__.py
-    ├── vocabulary.py
-    ├── models.py
-    └── tokenizer.py
-```
-
-
-***
-
 # README.md
 
 ```markdown
