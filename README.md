@@ -1,6 +1,4 @@
 # README.md
-
-```markdown
 # Text-to-Python Code Generation using Seq2Seq Models
 
 A comprehensive implementation and comparison of three sequence-to-sequence models (Vanilla RNN, LSTM, and LSTM with Attention) for generating Python code from natural language descriptions.
@@ -326,135 +324,11 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 For questions or collaborations:
 
-- GitHub: [@yourusername](https://github.com/yourusername)
-- Email: your.email@example.com
+- GitHub: [@yourusername]([https://github.com/yourusername](https://github.com/rony31416))
+- Email: bsse1325@iit.du.ac.bd
 
 ---
 
 Last updated: February 13, 2026
 
 ```
-
-***
-
-# requirements.txt
-
-```
-
-torch>=1.9.0
-numpy>=1.19.0
-matplotlib>=3.3.0
-seaborn>=0.11.0
-nltk>=3.6
-datasets>=2.0.0
-pandas>=1.3.0
-tqdm>=4.60.0
-
-```
-
-***
-
-# inference/README.md
-
-```markdown
-# Inference Guide
-
-This directory contains utilities for performing inference with trained models.
-
-## Quick Start
-
-### 1. Basic Inference
-
-```python
-from inference import generate_code
-
-generated_code = generate_code(
-    docstring="Calculate factorial of a number",
-    model_path="attention_best.pt",
-    vocab_path="vocabularies.pkl"
-)
-print(generated_code)
-```
-
-
-### 2. Command Line Usage
-
-```bash
-python example_inference.py \
-    --docstring "Sort a list of integers" \
-    --model attention \
-    --checkpoint ../checkpoints/attention_best.pt \
-    --vocab ../vocabularies.pkl
-```
-
-
-### 3. Batch Inference
-
-```python
-from inference import batch_generate
-
-docstrings = [
-    "Add two numbers",
-    "Sort a list",
-    "Find maximum element"
-]
-
-results = batch_generate(docstrings, model_path, vocab_path)
-for doc, code in zip(docstrings, results):
-    print(f"Input: {doc}")
-    print(f"Output: {code}\n")
-```
-
-
-## API Reference
-
-### generate_code()
-
-Generate Python code from a natural language description.
-
-**Parameters:**
-
-- `docstring` (str): Natural language description
-- `model_path` (str): Path to model checkpoint
-- `vocab_path` (str): Path to vocabulary file
-- `max_length` (int, optional): Maximum generation length (default: 80)
-- `device` (str, optional): 'cpu' or 'cuda' (default: 'cpu')
-
-**Returns:**
-
-- `str`: Generated Python code
-
-
-### generate_with_attention()
-
-Generate code and return attention weights for visualization.
-
-**Parameters:**
-
-- Same as `generate_code()`
-- `return_attention` (bool): If True, returns attention weights
-
-**Returns:**
-
-- `tuple`: (generated_code, attention_weights)
-
-
-## Examples
-
-See `example_inference.py` for complete working examples.
-
-## Troubleshooting
-
-**Issue**: "Vocabulary file not found"
-**Solution**: Make sure you've downloaded `vocabularies.pkl` from the training notebook
-
-**Issue**: "Model architecture mismatch"
-**Solution**: Ensure the model checkpoint matches the model type (vanilla_rnn, lstm, or attention)
-
-**Issue**: "Out of memory"
-**Solution**: Use CPU inference or reduce batch size
-
-```
-
-***
-
